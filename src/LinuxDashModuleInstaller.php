@@ -1,13 +1,13 @@
 <?php
 
-namespace Joshbrw\LaravelModuleInstaller;
+namespace Ivebeenlinuxed\LinuxDashModuleInstaller;
 
 use Composer\Composer;
 use Composer\IO\IOInterface;
 use Composer\Package\PackageInterface;
 use Composer\Installer\LibraryInstaller;
 
-class LaravelModuleInstaller extends LibraryInstaller
+class LinuxDashModuleInstaller extends LibraryInstaller
 {
     const DEFAULT_ROOT = "Modules";
 
@@ -55,17 +55,17 @@ class LaravelModuleInstaller extends LibraryInstaller
             throw new \Exception($this->usage());
         }
 
-        $splitNameToUse = explode("-", $split[1]);
+        $splitNameToUse = explode("-", $split[1], 2);
 
         if (count($splitNameToUse) < 2) {
             throw new \Exception($this->usage());
         }
 
-        if (array_pop($splitNameToUse) !== 'module') {
+        if ($splitNameToUse[0] !== 'linuxdash') {
             throw new \Exception($this->usage());
         }
 
-        return implode('',array_map('ucfirst', $splitNameToUse));
+        return $splitNameToUse[1];
     }
 
     /**
@@ -74,7 +74,7 @@ class LaravelModuleInstaller extends LibraryInstaller
      */
     protected function usage()
     {
-        return "Ensure your package's name is in the format <vendor>/<name>-<module>";
+        return "Ensure your package's name is in the format <vendor>/linuxdash-<name>";
     }
 
     /**
@@ -82,6 +82,6 @@ class LaravelModuleInstaller extends LibraryInstaller
      */
     public function supports($packageType)
     {
-        return 'laravel-module' === $packageType;
+        return 'linuxdash-module' === $packageType;
     }
 }
