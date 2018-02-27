@@ -1,17 +1,17 @@
 <?php
 
-namespace Joshbrw\LaravelModuleInstaller;
+namespace Ivebeenlinuxed\LinuxDashModuleInstaller;
 
 use Composer\Composer;
 use Composer\IO\IOInterface;
 use Composer\Plugin\PluginInterface;
 
-class LaravelModuleInstallerPlugin implements PluginInterface
+class LinuxDashModuleInstallerPlugin implements PluginInterface
 {
 
     public function activate(Composer $composer, IOInterface $io)
     {
-        $installer = new LaravelModuleInstaller($io, $composer);
+        $installer = new LinuxDashModuleInstaller($io, $composer);
         $composer->getInstallationManager()->addInstaller($installer);
     }
 
