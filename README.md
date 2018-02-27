@@ -1,4 +1,4 @@
-# Laravel Module Installer
+# LinuxDash Module Installer
 
 The purpose of this package is to allow for easy installation of standalone Modules into the [Laravel Modules](https://github.com/nWidart/laravel-modules) package. This package will ensure that your module is installed into the `Modules/` directory instead of `vendor/`.
 
