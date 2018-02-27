@@ -1,14 +1,14 @@
 {
-    "name": "joshbrw/laravel-module-installer",
+    "name": "ivebeenlinuxed/linuxdash-module-installer",
     "type": "composer-plugin",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Joshbrw\\LaravelModuleInstaller\\": "src/"
+            "Ivebeenlinuxed\\LinuxDashModuleInstaller\\": "src/"
         }
     },
     "extra": {
-        "class": "Joshbrw\\LaravelModuleInstaller\\LaravelModuleInstallerPlugin"
+        "class": "Ivebeenlinuxed\\LinuxDashModuleInstaller\\LinuxDashModuleInstallerPlugin"
     },
     "require-dev": {
         "composer/composer": "^1.3",
